@@ -71,7 +71,7 @@ def signUp():
 
 @app.route("/address")
 def ourAddress():
-    return redirect(f"/dashboard/{session['userid']}")
+    return render_template("addr.html")
 
 @app.route("/register",methods=['POST'])
 def register():
