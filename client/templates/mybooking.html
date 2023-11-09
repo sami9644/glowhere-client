@@ -5,7 +5,7 @@ my bookings
 {% block content %}
 <div class="bookings">
     {% for i in mybookings %}
-        <div class="booking">You booked <b>{{ serinfo(i[1])[0] }}</b> on <b>{{ i[3] }}</b> for <b>{{ i[4] }}</b></div>
+        <div class="booking">You booked <b>{{ serinfo(i[1])[0] }}</b> on <b>{{ i[3] }}</b> for <b>{{ i[4] }}</b> <button onclick="unbookService('{{ i[0] }}')">Unbook service</button></div>
     {% endfor %}
 </div>
 {% endblock %}
