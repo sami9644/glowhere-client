@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% block title %} Log in {% endblock %}
+{% block content %}
+<form action="/register" method="post">
+    <p id="error"></p>
+    <div class="input-container">
+        <label>Full name</label>
+        <input type="text" name="fullname" required>
+    </div>
+    <div class="input-container">
+        <label>User name</label>
+        <input type="text" name="username" required>
+    </div>
+    <div class="input-container">
+        <label>E-mail</label>
+        <input type="email" name="email-id" required>
+    </div>
+    <div class="input-container">
+        <label>Password</label>
+        <input type="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]{8,}$" title="Minimum length (e.g., at least 8 characters)
+        At least one uppercase letter
+        At least one lowercase letter
+        At least one digit (0-9)
+        At least one special character (e.g., !, @, #, $, etc.)" required>
+    </div>
+    <div class="input-container">
+        <label>Confirm password</label>
+        <input type="password" name="password2" required>
+    </div>
+    <div class="input-container">
+        <button type="submit">Create account</button>
+        <button type="reset">Reset</button>
+    </div>
+</form>
+{% endblock %}

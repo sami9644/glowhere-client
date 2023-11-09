@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Glow here{% endblock %}</title>
+    <link rel="shortcut icon" href="/static/image/logo/glow here.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="brand-logo">
+            <img src="/static/image/logo/gh.jpg" alt="glowhere logo" srcset="">
+        </div>
+        <div class="menu" onclick="document.querySelector('.links').classList.toggle('active')">
+            <img src="/static/image/icons/menu.svg" alt="" srcset="">
+        </div>
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="/login">Log in</a>
+            <a href="/signup">Sign up</a>
+            <a href="/address">Our address</a>
+        </div>
+    </div>
+    {% block content %}
+    <div class="services">
+        <h1 style="text-align: center;">Services provided by GlowHere</h1>
+        <div class="service">
+            <img src="/static/image/service/nails.jpg">
+            <h2 style="vertical-align: middle;">nail services like manicures, pedicures, extensions, nail art, gel, acrylic nails, and nail repair. </h2>
+        </div>
+        <div class="service">
+            <img src="/static/image/service/pedicure.jpg">
+            <h2 style="vertical-align: middle;">nail services like manicures, pedicures, extensions, nail art, gel, acrylic nails, and nail repair for your feet. </h2>
+        </div>
+        <div class="service">
+            <img src="/static/image/service/eyelash.jpg">
+            <h2 style="vertical-align: middle;">And also eyelash makeups like applying curling mascara and so on</h2>
+        </div>
+        <div class="service">
+            <img src="/static/image/service/makeup.jfif">
+            <h2 style="vertical-align: middle;">And general make up services for weeding birthdays and any occasion </h2>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

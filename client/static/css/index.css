@@ -1,0 +1,148 @@
+* {
+    color: #fff;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #40431e;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.nav-bar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px #fff;
+}
+.brand-logo img {
+    width: 60%;
+    margin-left: 5%;
+}
+.links {
+    display: flex;
+    align-items: center;
+}
+a {
+    padding: 1em;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+.services {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.service {
+    width: 100%;
+    display: flex;
+    height: 40%;
+    justify-content: space-around;
+    align-items: center;
+    /* overflow-y: hidden; */
+    word-wrap: break-word;
+    /* border: solid; */
+    margin-bottom: 4%;
+}
+.service img {
+max-height: 100%;
+}
+form {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form .input-container {
+    width: 30%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    /* display: flex; */
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.3em;
+}
+label {
+    font-size: 1.2rem;
+    margin-right: 5%;
+    white-space: nowrap;
+    
+}
+button {
+    background-color: #0D5FC2;
+    border: none;
+    padding:.4em ;
+    font-size: 1.2rem;
+    margin-right: 5%;
+    white-space: nowrap;
+    cursor: pointer;
+}
+input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: solid 1px;
+    font-size: 1.2rem;
+}
+.location {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y:scroll ;
+}
+.menu {
+    display: none;
+}
+@media (max-width:600px) {
+    * {
+        font-size: 16px;
+    }
+    form .input-container {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .input-container button {
+        margin-top: 4%;
+        
+    }
+    form {
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .menu {
+        display: block;
+        height: 100%;
+        padding: .5em;
+    }
+    .menu img {
+        cursor: pointer;
+        height: 100%;
+    }
+    .links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+    .nav-bar {
+       flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .active {
+        display: flex;
+    }
+    
+    /* iframe {
+        width: 80%;
+        height: 80%;
+    } */
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ info(userid)[2] }}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="shortcut icon" href="/static/image/logo/glow here.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="username">
+            <h2 style="font-size: 1.3rem;text-transform:uppercase;">{{ info(userid)[2] }}</h2>
+        </div>
+        <div class="menu" onclick="">
+            <img src="/static/image/icons/menu.svg" alt="" srcset=""  onclick="document.querySelector('.links').classList.toggle('active')">
+        </div>
+        <div class="links">
+            <a href="/dashboard/{{ userid }}">Home</a>
+            <a href="/mybookings">My bookings</a>
+            <a href="/logout">Log out</a>
+        </div>
+    </div>
+    {% block content %}
+    <div class="services">
+        {% for i in services %}
+            <div class="service" style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),url('{{ i[4] }}');background-repeat: no-repeat;background-size: 100% 100%;">
+                <h2>{{ i[0] }}</h2>
+                <p><b>Price £{{ i[2] }}</b></p>
+                <p>{{ i[3] }}</p>
+                {% if isbooked(i[1],userid) %}
+                    <button onclick="unbookService('{{ isbooked(i[1],userid)[0] }}')">Unbook service</button>
+                {% else %}
+                    <button onclick="bookService('{{i[1]}}','{{ userid }}')">Book service</button>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
+    <div class="booking-form">
+        <button onclick="document.querySelector('.booking-form').style.display='none'">X</button>
+        <form action="/bookservice" method="post">
+            <input type="hidden" name="serviceid" value="">
+            <div class="input-container">
+                <label>Booked for (date)</label>
+                <input type="text" name="bookdate" pattern="\d{4}-\d{2}-\d{2}" title="Write in the format of year-month-day for example 2000-12-12" placeholder="YYYY-MM-DD" required>
+            </div>
+            <div class="input-container">
+                <label>Booked for (time)</label>
+                <input type="time" name="booktime" required>
+            </div>
+            <div class="input-container">
+                <button type="submit">Book service</button>
+            </div>
+        </form>
+    </div>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

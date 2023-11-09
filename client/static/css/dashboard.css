@@ -1,0 +1,157 @@
+* {
+    color: #fff;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #40431e;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.nav-bar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+}
+.nav-bar >* {
+    padding: 1em;
+}
+a {
+    padding: 1em;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.services {
+    width: 100%;
+    height: 85%;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.service {
+    width: 20%;
+    height: 70%;
+    border: solid;
+    text-align: center;
+    margin: 3%;
+    border: solid 1px #fff;
+}
+.service img {
+    width: 100%;
+    height: 60%;
+    
+}
+.service * {
+    word-wrap: break-word;
+}
+button {
+    background-color: #0D5FC2;
+    border: none;
+    padding:.4em ;
+    font-size: 1.2rem;
+    margin-right: 5%;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.menu {
+    display: none;
+}
+.booking-form {
+    width: 80%;
+    min-width: max-content;
+    padding: 1em;
+    height: 30%;
+    background-color: #2e3135;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+form .input-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 5%;
+    margin-top: 2%;
+}
+.input-container input {
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+label {
+    font-size: 1.2rem;
+    margin-right: 5%;
+    white-space: nowrap;
+    
+}
+.bookings {
+    width: 100%;
+    height: 80%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+.booking {
+    width: 100%;
+    padding: 1em;
+    background-color: #0D5FC2;
+    font-size: 1.2rem;
+    margin-bottom: 2%;
+}
+@media (max-width:600px) {
+    * {
+        font-size: 14px;
+    }
+    form .input-container {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .input-container button {
+        margin-top: 4%;
+        
+    }
+    form {
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .menu {
+        display: block;
+        height: 100%;
+        padding: .5em;
+    }
+    .menu img {
+        cursor: pointer;
+        height: 100%;
+    }
+    .links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+    .nav-bar {
+       flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .active {
+        display: flex;
+    }
+    .service {
+        width: 100%;
+    }
+    .booking-form {
+        left: 0;
+        transform: translate(0%,-50%);
+        width: 100%;
+    }
+    
+}
